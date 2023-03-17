@@ -1,6 +1,5 @@
 import gulp from 'gulp';
 
-
 // // Config
 import { path } from './gulp/config/path.js';
 import { app } from './gulp/config/app.js'
@@ -16,11 +15,11 @@ import server from './gulp/tasks/server.js';
 
 // Watcher
 function watcher () {
-    gulp.watch(path.html.watch, html)
-    gulp.watch(path.scss.watch, scss)
-    gulp.watch(path.js.watch, js)
-    gulp.watch(path.img.watch, img)
-    gulp.watch(path.font.watch, font)
+    gulp.watch(path.html.watch, html);
+    gulp.watch(path.scss.watch, scss);
+    gulp.watch(path.js.watch, js);
+    gulp.watch(path.img.watch, img);
+    gulp.watch(path.font.watch, font);
 };
 
 // Tasks
@@ -33,10 +32,8 @@ export { img }
 export { font };
 export { clear };
 
+//Assembly
 const build = gulp.series(clear, html, scss, js, img, font);
-
-// const dev = gulp.series(clear, html, scss, js, font, gulp.parallel(watcher, server))
 const dev = gulp.series(build, gulp.parallel(watcher, server))
 
-//Assembly
 export default app.isProd ? build : dev;

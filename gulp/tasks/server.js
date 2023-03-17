@@ -1,5 +1,5 @@
 import { path } from "../config/path.js";
-import browserSync, { notify } from "browser-sync";
+import browserSync from "browser-sync";
 
 function server () {
     browserSync.init({
