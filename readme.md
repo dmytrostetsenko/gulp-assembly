@@ -19,6 +19,10 @@ For start in depelopment monde with local server
 ```node
 npm run dev
 ```
+For create new branch and deploy on gitHub Pages
+```node
+npm run deploy
+```
 ---
 ### Contribution
 If you find a bug or want to make improvements to the project, please create a pull request.
